@@ -1,0 +1,25 @@
+@import url(./_inactive/popup__button_inactive.css);
+
+.popup__button{
+    width: 358px;
+    height: 50px;
+    border: 0;
+    margin: 28px auto 0;
+    cursor: pointer;
+    background-color: #000000;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+    color: #FFFFFF;
+}
+
+.popup__button:hover{
+    opacity: 0.8;
+}
+
+@media screen and (max-width: 535px) {
+    .popup__button {
+        width: 90%;
+    }
+}

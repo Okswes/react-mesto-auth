@@ -1,0 +1,24 @@
+.place-list{
+    margin: 52px auto 0;
+    display: grid;
+    justify-content: space-around;
+    column-gap: 18px;
+    row-gap: 21px;
+    grid-template-rows: repeat(2, auto);
+    grid-template-columns: repeat(3, auto);
+}
+
+@media screen and (max-width: 940px) {
+    .place-list {
+        margin: 52px 5% auto;    
+        grid-template-columns: repeat(2, auto);
+        grid-template-rows: repeat(3, auto);
+    }
+}
+
+@media screen and (max-width: 590px) {
+    .place-list {
+        grid-template-columns: repeat(1, auto);
+        grid-template-rows: repeat(6, auto);
+    }
+}

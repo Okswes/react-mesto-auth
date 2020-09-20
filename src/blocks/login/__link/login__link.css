@@ -1,0 +1,12 @@
+.login__link{
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: #FFFFFF;
+    text-decoration: none;
+    display: block;
+    margin-top: 20px;
+}

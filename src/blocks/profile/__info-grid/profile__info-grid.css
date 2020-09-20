@@ -1,0 +1,7 @@
+.profile__info-grid{
+    max-width: 340px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+}

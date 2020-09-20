@@ -1,0 +1,16 @@
+@import url(./_hidden/place__delete_hidden.css);
+
+.place__delete{
+    position: absolute;
+    width: 19px;
+    height: 19px;
+    border: 0;
+    top: 10px;
+    right: 10px;
+    background: url(../../../images/deleteIcon.svg);
+    background-position: center;
+}
+
+.place__delete:hover{
+    opacity: 0.6;
+}

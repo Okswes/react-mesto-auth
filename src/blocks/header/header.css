@@ -1,0 +1,19 @@
+@import url(./__logo/header__logo.css);
+@import url(./__nav/header__nav.css);
+@import url(./__nav-link/header__nav-link.css);
+
+.header{
+    max-width: 882px;
+    border-bottom: 1px solid rgba(229, 229, 229, 0.7);
+    margin: 0 auto;
+    padding-top: 40px;
+    display: flex;
+    justify-content: space-between;
+}
+
+@media screen and (max-width: 885px) {
+    .header{
+        margin: auto 5%;
+    }
+}
+

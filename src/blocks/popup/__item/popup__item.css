@@ -1,0 +1,15 @@
+@import url(./_type/popup__item_type_error.css);
+
+.popup__item{
+    border: 0;
+    width: 100%;
+    height: 24px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    background-color: transparent;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    margin-top: 40px;
+}

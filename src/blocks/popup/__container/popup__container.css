@@ -1,0 +1,19 @@
+.popup__container{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    max-width: 430px;
+    max-height: 380px;
+    margin: auto;
+    padding-bottom: 35px;
+    background-color: #ffffff;
+    color: #000000;
+    border-radius: 10px;
+}
+
+@media screen and (max-width: 535px) {
+    .popup__container {
+        max-width: 80%;
+    }
+}
+

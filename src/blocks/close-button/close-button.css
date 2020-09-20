@@ -1,0 +1,22 @@
+.close-button{
+    position: absolute;
+    border: 0;
+    cursor: pointer;
+    top: -50px;
+    right: -45px;
+    background: url(../../images/CloseIcon.png);
+    background-position: center;
+    width: 40px;
+    height: 40px;
+}
+
+.close-button:hover{
+    opacity: 0.6;
+}
+
+
+@media screen and (max-width: 535px) {
+    .close-button {
+        right: 0;
+    }
+}

@@ -1,0 +1,13 @@
+.page{
+    background-color: #000000;
+    margin: 0 auto;
+    padding-bottom: 20px;
+    font-family: 'Inter', 'Arial', sans-serif;
+    color: #FFFFFF;
+    min-height: 100vh;
+    box-sizing: border-box;  
+    -moz-box-sizing: border-box;  
+    -webkit-box-sizing: border-box;   
+}
+
+

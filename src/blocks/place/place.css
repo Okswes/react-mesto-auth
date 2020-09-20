@@ -1,0 +1,17 @@
+@import url(./__delete/place__delete.css);
+@import url(./__like/place__like.css);
+@import url(./__picture/place__picture.css);
+@import url(./__text/place__text.css);
+@import url(./__textarea/place__textarea.css);
+@import url(./__likecount/place__likecount.css);
+@import url(./__likesform/place__likesform.css);
+
+.place{
+    position: relative;
+    background-color: #FFFFFF;
+    max-width: 282px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    overflow: hidden;
+}

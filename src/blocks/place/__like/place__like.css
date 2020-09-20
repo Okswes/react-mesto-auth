@@ -1,0 +1,19 @@
+.place__like{
+    align-self: center;
+    padding-right: 15px;
+    border: 0;
+    width: 21px;
+    height: 19px;
+    cursor: pointer;
+    background: url(../../../images/like.svg);
+    background-repeat: no-repeat;
+}
+
+.place__like:hover{
+    opacity: 0.7;
+}
+
+.place__like_active{
+    background: url(../../../images/liked.svg);
+    background-repeat: no-repeat;
+}

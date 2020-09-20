@@ -1,0 +1,6 @@
+.place__picture{
+    width: 282px;
+    height: 282px;
+    -o-object-fit: cover;
+       object-fit: cover;
+}

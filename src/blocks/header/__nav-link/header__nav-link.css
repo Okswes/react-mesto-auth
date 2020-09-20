@@ -1,0 +1,13 @@
+.header__nav-link{
+    border: none;
+    background-color: inherit;
+    font-family: Inter;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 22px;
+    letter-spacing: 0em;
+    color: white;
+    margin-left: 24px;
+    text-decoration: none;
+}

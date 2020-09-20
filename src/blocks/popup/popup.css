@@ -1,0 +1,37 @@
+@import url(./__button/popup__button.css);
+@import url(./__container/popup__container.css);
+@import url(./__item/popup__item.css);
+@import url(./__title/popup__title.css);
+@import url(./__user-info/popup__user-info.css);
+@import url(./__picture-container/popup__picture-container.css);
+@import url(./__full-picture/popup__full-picture.css);
+@import url(./__picture-title/popup__picture-title.css);
+@import url(./__item/_type/popup__item_type_error.css);
+@import url(./__error/popup__error.css);
+@import url(./__error/popup__error_active.css);
+@import url(./__button/_inactive/popup__button_inactive.css);
+@import url(./__login_logo/popup__login_logo.css);
+@import url(./__infotooltip/popup__infotooltip.css);
+@import url(./__infotooltip-text/popup__infotooltip-text.css);
+
+.popup{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: visibility .5s, opacity .5s linear;
+    -o-transition: visibility .5s, opacity .5s linear;
+    transition: visibility .5s, opacity .5s linear;
+}
+
+
+
+
+
