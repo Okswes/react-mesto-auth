@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "./static/css/main.123cb5ba.chunk.css",
+    "main.js": "./static/js/main.f902e1f4.chunk.js",
+    "main.js.map": "./static/js/main.f902e1f4.chunk.js.map",
+    "runtime-main.js": "./static/js/runtime-main.d1eb62e0.js",
+    "runtime-main.js.map": "./static/js/runtime-main.d1eb62e0.js.map",
+    "static/js/2.fe0cafd2.chunk.js": "./static/js/2.fe0cafd2.chunk.js",
+    "static/js/2.fe0cafd2.chunk.js.map": "./static/js/2.fe0cafd2.chunk.js.map",
+    "index.html": "./index.html",
+    "precache-manifest.fc524af4ad49efece462244a4d4822aa.js": "./precache-manifest.fc524af4ad49efece462244a4d4822aa.js",
+    "service-worker.js": "./service-worker.js",
+    "static/css/main.123cb5ba.chunk.css.map": "./static/css/main.123cb5ba.chunk.css.map",
+    "static/js/2.fe0cafd2.chunk.js.LICENSE.txt": "./static/js/2.fe0cafd2.chunk.js.LICENSE.txt",
+    "static/media/index.css": "./static/media/liked.5bbb05f7.svg",
+    "static/media/NotLogin.svg": "./static/media/NotLogin.4072126c.svg",
+    "static/media/OkLogin.svg": "./static/media/OkLogin.e38b395c.svg",
+    "static/media/logo.svg": "./static/media/logo.c6f11019.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d1eb62e0.js",
+    "static/js/2.fe0cafd2.chunk.js",
+    "static/css/main.123cb5ba.chunk.css",
+    "static/js/main.f902e1f4.chunk.js"
+  ]
+}
