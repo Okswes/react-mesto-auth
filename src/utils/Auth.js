@@ -14,7 +14,7 @@ export const register = (email, password) => {
                 return res.json();
             }
             return Promise.reject(`Ошибка: ${res.status}`);
-        })
+        });
 };
 
 export const authorize = (email, password) => {

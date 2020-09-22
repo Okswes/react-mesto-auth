@@ -11,14 +11,14 @@ import EditProfilePopup from './EditProfilePopup';
 import EditAvatarPopup from './EditAvatarPopup';
 import AddPlacePopup from './AddPlacePopup';
 import InfoTooltip from './InfoTooltip';
-import * as Auth from './Auth';
+import * as Auth from '../utils/Auth';
 import { Route, Switch, Redirect, useHistory } from 'react-router-dom';
 import { CurrentUserContext } from '../contexts/CurrentUserContext';
 import ProtectedRoute from './ProtectedRoute';
 
 function App() {
     const [loggedIn, setLoggedIn] = React.useState(false);
-    const [user, setUser] = React.useState();
+    const [user, setUser] = React.useState('');
     const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = React.useState(false);
     const [isAddPlacePopupOpen, setIsAddPlacePopupOpen] = React.useState(false);
     const [isEditAvatarPopupOpen, setIsEditAvatarPopupOpen] = React.useState(false);
@@ -40,7 +40,7 @@ function App() {
                 if (res) {
                     setUser(res.data.email);
                     setLoggedIn(true);
-                    history.push('/cards');                    
+                    history.push('/cards');
                 }
             });
         }
@@ -48,9 +48,9 @@ function App() {
 
     React.useEffect(() => {
         tokenCheck();
-    }, [loggedIn]) // eslint-disable-line react-hooks/exhaustive-deps
+    }, []) // eslint-disable-line react-hooks/exhaustive-deps
 
-    
+
     React.useEffect(() => {
         Promise.all([api.getUserInfo(), api.getInitialCards()])
             .then(([user, initialCards]) => {
@@ -104,7 +104,9 @@ function App() {
         setIsEditAvatarPopupOpen(false);
         setIsEditProfilePopupOpen(false);
         setIsAddPlacePopupOpen(false);
-        setSelectedCard(false);
+        setSelectedCard({
+            isOpen: false
+        });
         setIsInfoTooltipOpen(false);
     }
 
@@ -139,14 +141,37 @@ function App() {
         setIsInfoTooltipOpen(true);
     }
 
-    function signOut(){
+    function signOut() {
         localStorage.removeItem('jwt');
         setLoggedIn(false);
         setUser('');
         history.push('/sign-in');
     }
 
+    function logIn(email, password, setEmail, setPassword) {
+        Auth.authorize(email, password)
+            .then(res => {
+                localStorage.setItem('jwt', res.token);
+                setUser(email);
+                setEmail('');
+                setPassword('');
+                handleLogin();
+                history.push('/cards');
+                handleInfoTooltip();
+            })
+            .catch(err => handleInfoTooltip());
+    }
 
+    function signUp(email, password) {
+        Auth.register(email, password).then((res) => {
+            if (res) {
+                history.push('/cards');
+            } else {
+                console.log("Что-то пошло не так!");
+            }
+        })
+        .catch(err => handleInfoTooltip());
+    }
 
     function handleUpdateCards(data) {
         api.addNewCard(data)
@@ -158,13 +183,13 @@ function App() {
                 console.log(`Ошибка: ${err}`);
             })
     }
-  
+
     return (
         <>
             <CurrentUserContext.Provider value={currentUser}>
                 <Header onSignOut={signOut} user={user} isLoggedIn={loggedIn} />
                 <Switch>
-                    <ProtectedRoute path="/cards" component={Main} loggedIn={loggedIn} 
+                    <ProtectedRoute path="/cards" component={Main} loggedIn={loggedIn}
                         cards={cards}
                         onEditProfile={handleEditProfileClick}
                         onAddPlace={handleAddPlaceClick}
@@ -173,10 +198,10 @@ function App() {
                         onCardDelete={handleCardDelete}
                         onCardLike={handleCardLike} />
                     <Route path="/sign-in">
-                        <Login handleLogin={handleLogin} handleInfoTooltip={handleInfoTooltip} setUser={setUser} />
+                        <Login onLogin={logIn} />
                     </Route>
                     <Route path="/sign-up">
-                        <Register />
+                        <Register onSignup={signUp} />
                     </Route>
                     <Route>
                         {<Redirect to={`/${loggedIn ? 'cards' : 'sign-in'}`} />}

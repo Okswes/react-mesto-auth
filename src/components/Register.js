@@ -1,11 +1,9 @@
 import React from 'react';
-import * as Auth from './Auth';
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function Register(props) {
     const [email, setEmail] = React.useState('');
     const [password, setPassword] = React.useState('');
-    const history = useHistory();
 
     function handleEmailChange(e) {
         setEmail(e.target.value);
@@ -17,13 +15,7 @@ function Register(props) {
 
     function handleSubmit(e) {
         e.preventDefault();
-        Auth.register(email, password).then((res) => {
-            if (res) {
-                history.push('/cards');
-            } else {
-                console.log("Что-то пошло не так!");
-            }
-        });
+        props.onSignup(email, password);
     }
     return (
         <main className="content">

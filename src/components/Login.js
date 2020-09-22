@@ -1,11 +1,9 @@
 import React from 'react';
-import { Link, useHistory } from 'react-router-dom';
-import * as Auth from './Auth';
+import { Link } from 'react-router-dom';
 
 function Login(props) {
     const [email, setEmail] = React.useState('');
     const [password, setPassword] = React.useState('');
-    const history = useHistory();
 
     function handleEmailChange(e) {
         setEmail(e.target.value);
@@ -20,17 +18,7 @@ function Login(props) {
         if (!email || !password) {
             return;
         }
-        Auth.authorize(email, password)
-            .then(res => {
-                localStorage.setItem('jwt', res.token);
-                props.setUser(email);
-                setEmail('');
-                setPassword('');
-                props.handleLogin();
-                history.push('/cards');
-                props.handleInfoTooltip();
-            })
-        props.handleInfoTooltip();
+        props.onLogin(email, password, setEmail, setPassword);
     }
     return (
         <main className="content">
